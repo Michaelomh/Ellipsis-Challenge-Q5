@@ -1,4 +1,5 @@
 activeNavigation = '';
+activeTestimonial = "testimonial-1";
 
 $(document).ready(function () {
     setTimeout('topArrow()');
@@ -22,7 +23,6 @@ $(".landingpage").click(function () {
 
     setTimeout(function () {
         $(".logo").css("opacity", "1");
-
     }, 2000);
 });
 
@@ -184,9 +184,6 @@ var closeFunction = function () {
     }, 500);
 }
 
-activeTestimonial = "testimonial-1";
-
-//Testimonial functionality
 $(".member").mouseenter(function () {
     if (jQuery(this).attr("id") == "testimonial-1") {
         $("#testimonial-1").addClass("testimonial-active");
