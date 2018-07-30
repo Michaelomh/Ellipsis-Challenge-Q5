@@ -1,7 +1,6 @@
 activeNavigation = '';
 
 $(document).ready(function () {
-    //jquery bouncing element 
     setTimeout('topArrow()');
 });
 
@@ -44,7 +43,6 @@ $("#story").click(function () {
     $(".close-button").css("display", "block");
 
     activeNavigation = jQuery(this).attr('id');
-    console.log(activeNavigation);
 
     setTimeout(function () {
         $(".close-button").css("opacity", "1");
@@ -68,7 +66,6 @@ $("#highlight").click(function () {
     $(".close-button").css("display", "block");
 
     activeNavigation = jQuery(this).attr('id');
-    console.log(activeNavigation);
 
     setTimeout(function () {
         $(".close-button").css("opacity", "1");
@@ -92,7 +89,6 @@ $("#testimonial").click(function () {
     $(".close-button").css("display", "block");
 
     activeNavigation = jQuery(this).attr('id');
-    console.log(activeNavigation);
 
     setTimeout(function () {
         $(".close-button").css("opacity", "1");
@@ -116,7 +112,7 @@ $("#sponsorship").click(function () {
     $(".close-button").css("display", "block");
 
     activeNavigation = jQuery(this).attr('id');
-    console.log(activeNavigation);
+    runCounter();
 
     setTimeout(function () {
         $(".close-button").css("opacity", "1");
@@ -133,17 +129,20 @@ $(document).keyup(function (e) {
     }
 });
 
-$('.count').each(function () {
-    $(this).prop('Counter', 10).animate({
-        Counter: $(this).text()
-    }, {
-        duration: 2000,
-        easing: 'swing',
-        step: function (now) {
-            $(this).text(Math.ceil(now));
-        }
+var runCounter = function () {
+    $('.count').each(function () {
+        $(this).prop('Counter', 10).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 2000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
     });
-});
+}
+
 
 var closeFunction = function () {
     if (activeNavigation == 'story') {
